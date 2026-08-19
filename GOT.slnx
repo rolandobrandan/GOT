@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="GOT.Api/GOT.Api.csproj" Id="6dfa4dc6-2165-4101-931a-da3815570ef5" />
+  <Project Path="GOT.Entities/GOT.Entities.csproj" Id="46a59b1f-a1c7-4173-a338-b63c50e7ca7b" />
+  <Project Path="GOT.Panel/GOT.Panel.csproj" Id="80bb7949-081e-4686-8097-9cfd13cc0f97" />
+</Solution>
