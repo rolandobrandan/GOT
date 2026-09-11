@@ -1,3 +1,5 @@
+@import url('colors.css');
+
 html {
   font-size: 14px;
 }
@@ -29,3 +31,151 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+
+body{
+    background-color: var(--bg-primary);
+    color: var(--txt-primary);
+    font-family: Bahnschrift;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-ligth);
+    padding: 0px 32px;
+    height: 70px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0, 0.02);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.header-left .brand {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 22px;
+    color: var(--color-primary);
+}
+
+.logo-text{
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.header-center .nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius:10px;
+    font-size: 19px;
+    text-decoration: none;
+    color: var(--txt-muted);
+}
+
+.nav-item:hover {
+    background-color:var(--hover-bg);
+    color:var(--color-primary);
+}
+
+.nav-item:active {
+    background-color:var(--hover-bg);
+    color:var(--color-primary);
+}
+
+.nav-active {
+    background-color: var(--hover-bg);
+    color: var(--color-primary);
+    width: 80px;
+    font-size: 16px;
+    font-family: Bahnschrift;
+}
+
+.icon-home {
+    margin-right: 5px;
+}
+
+.header-right {
+    display:flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--txt-muted);
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-icon:hover {
+    background-color: var(--hover-bg);
+    color: var(--color-primary);
+}
+
+.logout-icon {
+    color: var(--logout-color);
+    background-color: rgba(229,62,62,0.1);
+}
+
+
+/* form style para las vistas */
+
+
+.text-muted {
+    color: var(--txt-muted) !important;
+}
+
+.color-text {
+    color: var(--txt-primary) !important; 
+}
+
+
+.form-style {
+    padding: 20px;
+    background-color: var(--bg-card);
+    color: var(--txt-primary);
+    border: 1px solid var(--border-ligth) !important;
+    border-radius: 12px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
