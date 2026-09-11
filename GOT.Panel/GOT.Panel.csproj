@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\Api\" />
+    <ProjectReference Include="..\GOT.Entities\GOT.Entities.csproj" />
   </ItemGroup>
 
 </Project>
