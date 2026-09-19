@@ -16,29 +16,46 @@ namespace GOT.Panel.Infrastructure.Api
 
         public async Task<HttpResponseWrapper<List<SeasonDto>>> GetPaginatedAsync(string? name, PaginatedRequest paginated)
         {
-            throw new NotImplementedException();
+
+            string baseUrl;
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                baseUrl = $"{url}?PageNumber={paginated.PageNumber}&PageSize={paginated.PageSize}";
+            }
+            else
+            {
+                baseUrl = $"{url}/search?name={name}&PageNumber={paginated.PageNumber}&PageSize={paginated.PageSize}";
+            }
+
+            return await GetListAsync(baseUrl);
+
         }
 
-        public async Task<HttpResponseWrapper<List<SeasonDto>>> GetListAsync()
+        public async Task<HttpResponseWrapper<List<SeasonDto>>> GetListAsync(string url)
         {
             var response = await _httpClient.GetAsync(url);
             return await BuildResponseAsync<List<SeasonDto>>(response);
 
         }
 
-        public async Task<HttpResponseWrapper<List<SeasonDto>>> GetByIdAsync(int id)
+        public async Task<HttpResponseWrapper<SeasonDto>> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var response = _httpClient.GetAsync($"{url}/{id}");
+            return await BuildResponseAsync<SeasonDto>(await response);
         }
 
         public async Task<HttpResponseWrapper<object>> CreateAsync(SeasonDto seasonDto)
         {
-            throw new NotImplementedException();
+            var response = _httpClient.PostAsJsonAsync(url, seasonDto);
+            return await BuildResponseAsync<object>(await response);
         }
 
         public async Task<HttpResponseWrapper<object>> UpdateAsync(SeasonDto seasonDto)
         {
-            throw new NotImplementedException();
+            var response = _httpClient.PutAsJsonAsync($"{url}/{seasonDto.Id}", seasonDto);
+            return await BuildResponseAsync<object>(await response);
+
         }
 
         public async Task<HttpResponseWrapper<string>> DeleteAsync(int id)

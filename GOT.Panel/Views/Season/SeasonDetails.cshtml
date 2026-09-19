@@ -1,0 +1,40 @@
+﻿@model SeasonDto;
+
+
+<div class="card">
+    <div class="card-header">
+        @ViewBag.Text
+    </div>
+
+    <div class="card-body">
+        <form asp-action="SaveChanges" asp-controller="Season" method="post">
+            <input type="hidden" asp-for="Id"/>
+
+            <div class="form-group">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Temporada:</label>
+                    <input asp-for="Name" class="form-control" type="text"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Year" class="form-label">Año de Temporada:</label>
+                    <input asp-for="Year" class="form-control" type="text" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <a asp-action="Season" asp-controller="Season" class="btn btn-secondary">Cancelar</a>
+                    <input type="submit" class="btn btn-primary" value="Guardar"/>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
