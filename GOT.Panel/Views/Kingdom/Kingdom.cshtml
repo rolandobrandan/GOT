@@ -2,7 +2,7 @@
 
 
 <div class="form-style shadow-sm mb-3">
-    <h4 class="mb-0 fw-bold">Lista de Temporada</h4>
+    <h4 class="mb-0 fw-bold">Lista de Reinos</h4>
     <br />
     <div>
         <div class="row">
@@ -39,10 +39,11 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between aling-items-center nb-3">
                             <span class="badgue bg-secondary"># @items.Id</span>
-                            <span class="badge bg-secondary">Reino: @items.Name</span>
+                            @* <span class="badge bg-secondary">Reino: @items.Name</span> *@
                         </div>
+                        <p class="text-muted">Nombre del Reino:</p>
                         <h5 class="card-title fw-bold">@items.Name</h5>
-                        <p class="text-muted">Temporada de la serie.</p>
+                        <img class="img-fluid mb-2" alt="Imagen del reino" src="@items.Url"/>
                     </div>
 
                     <div class="card-body bg-transparent border-0 d-flex gap-2 pb-3">
