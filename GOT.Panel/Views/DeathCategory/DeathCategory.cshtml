@@ -1,0 +1,56 @@
+﻿@model List<DeathCategoryDto>
+
+
+<div class="form-style shadow-sm mb-3">
+    <h4 class="mb-0 fw-bold">Lista de Categorias de muerte</h4>
+    <br />
+    <div>
+        <div class="row">
+            <form asp-action="DeathCategory" asp-controller="DeathCategory" method="get" class="row col-sm-10 col-12 mb-2">
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <input class="form-control" type="text" name="name" placeholder="Buscar una cateogria de muerte por nombre.." />
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+
+            </form>
+
+            <div class="col-sm-2 col-12">
+                <a asp-action="DeathCategory" asp-controller="DeathCategory" asp-route-IdDeathCategory="0" class="btn btn-success">Nuevo</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row g-4">
+        @foreach (var items in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card h-100 shadow border-0">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between aling-items-center nb-3">
+                            <span class="badgue bg-secondary"># @items.Id</span>
+                            <span class="badge bg-secondary">Muerte: @items.Category</span>
+                        </div>
+                        <h5 class="card-title fw-bold">@items.Category</h5>
+                        <p class="text-muted">Temporada de la serie.</p>
+                    </div>
+
+                    <div class="card-body bg-transparent border-0 d-flex gap-2 pb-3">
+                        <a asp-action="DeathCategory" asp-controller="DeathCategory" asp-route-IdDeathCategory="@items.Id" class="btn btn-outline-primary">Editar</a>
+                        <a href="#" class="btn btn-outline-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

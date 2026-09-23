@@ -11,6 +11,13 @@ namespace GOT.Panel
 
 
             services.AddScoped<ISeasonService, SeasonService>();
+            services.AddScoped<IPersonServices, PersonServices>();
+            services.AddScoped<IKingdomService, KingdomService>();
+            services.AddScoped<IDeathCategoryService, DeathCategoryService>();
+            services.AddScoped<IBattleTypeService, BattleTypeService>();
+
+
+
 
 
 
